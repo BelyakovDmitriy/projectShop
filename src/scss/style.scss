@@ -1,0 +1,439 @@
+$fonts: 'Ubuntu', sans-serif;
+$colorBrand: #f16d7f;
+$marginContainer: 5%;
+$widthMax: 1920px;
+$fontsColor: #222;
+$gap: 5vw;
+
+.container{
+  margin: 0 $marginContainer;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  img{
+    width: 6vw;
+  }
+  .logo__content{
+    padding-left: 5%;
+    color: $fontsColor;
+    font-size: 3vw;
+    span{
+      font-weight: bold;
+      color: $colorBrand;
+    }
+  }
+}
+.inputContainer {
+  display: flex;
+  align-items: center;
+  padding-left: 1vw;
+  background-color: white;
+  font-size: 1.5vw;
+  border: 1px solid lightgrey;
+  border-radius: 1vw;
+  input{
+    width: 15vw;
+    padding-right: 1vw;
+    border: none;
+    outline: none;
+    text-align: right;
+  }
+  .content{
+    font-size: 1vw;
+    border-left: 1px solid lightgrey;
+    color: $colorBrand;
+    padding: 1vw;
+    cursor: pointer;
+  }
+  .content:hover {
+    color: $fontsColor;
+  }
+  .content:active {
+    color: $colorBrand;
+  }
+}
+.link:hover{
+  cursor: pointer;
+}
+
+.goodsItem{
+  padding: 1vw;
+  width: 100%;
+  font-size: 1.5vw;
+  .goodsItem__name{
+
+  }
+  .goodsItem__price{
+    color: $colorBrand;
+    font-weight: bold;
+  }
+}
+.goodsItem:hover{
+  position: relative;
+  box-shadow: 0 0 10px $fontsColor;
+  img {
+    filter: blur(2px);
+  }
+}
+.addToCard{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 20;
+  padding: 0 1vw;
+  width: max-content;
+  border-radius: 0.3vw;
+  background-color: $colorBrand;
+  color: white;
+}
+
+body{
+  width: 100%;
+  margin: 0 auto;
+  font-family: $fonts;
+  color: $fontsColor;
+  letter-spacing: 0.025em;
+}
+
+header {
+  padding: 1% 0;
+  .headerMenu{
+    font-size: 1.7vw;
+    a {
+      position: relative;
+      padding: 1vw;
+      color: $fontsColor;
+    }
+    a:hover {
+      color: $colorBrand;
+    }
+    a:hover:after{
+      content: "";
+      width: 80%;
+      height: 0.4vw;
+      position: absolute;
+      left: 10%;
+      bottom: 0;
+      background-color: $colorBrand;
+    }
+    a:active {
+      color: $fontsColor;
+    }
+  }
+  .searchAndBasket{
+    width: 25vw;
+    .cart {
+      font-size: 2vw;
+      color: $colorBrand;
+      cursor: pointer;
+    }
+    .cart:hover {
+      color: $fontsColor;
+    }
+    .cart:hover:active {
+      color: $colorBrand;
+    }
+  }
+}
+.banner{
+  width: 100%;
+  height: auto;
+  background-color: #e8e8e8;
+  .banner__container{
+    position: relative;
+    img{
+      width: 84vw;
+      margin-left: auto;
+    }
+    @media (max-width: 760px) {
+      img{
+        width: 100%;
+      }
+    }
+    .banner__content {
+      position: absolute;
+      top: 15.3vw;
+      left: 1.7vw;
+      font-size: 3vw;
+      font-weight: normal;
+      line-height: 1.2;
+
+      span {
+        color: $colorBrand;
+      }
+    }
+    .banner__content:before{
+      content: '';
+      position: absolute;
+      left: -1vw;
+      height: 100%;
+      width: 0.7vw;
+      background-color: $colorBrand;
+    }
+  }
+}
+.mainMenu{
+  display: grid;
+  grid-template-areas:  "post-1 post-2"
+                        "post-1 post-3"
+                        "post-4 post-3";
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2vw;
+  margin-top: $gap;
+  .man, .women, .children, .accessories {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+  }
+  .man:after, .women:after, .children:after, .accessories:after{
+    content: '';
+    position: absolute;
+    top: 2vw;
+    padding: 1vw;
+    border-bottom-right-radius: 0.2vw;
+    border-top-right-radius: 0.2vw;
+    font-weight: bold;
+    font-size: 1.5vw;
+    color: $colorBrand;
+    background-color: white;
+  }
+  .man {
+    grid-area: post-1;
+  }
+  .man:after{
+    content: 'Для мужчин';
+  }
+  .women {
+    grid-area: post-2;
+  }
+  .women:after {
+    content: 'Для женщин';
+  }
+  .children {
+    grid-area: post-3;
+  }
+  .children:after {
+    content: 'Для детей';
+  }
+  .accessories {
+    grid-area: post-4;
+    background-color: #dadad2;
+    img{
+      width: 80%;
+      margin-left: auto;
+    }
+  }
+  .accessories:after {
+    content: 'Аксессуары';
+  }
+}
+.featured{
+  margin-top: $gap;
+  text-align: center;
+  .featuredTitle{
+    font-size: 3vw;
+  }
+  .featured__items{
+    margin-top: 2vw;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: 2vw;
+  }
+  .allItems{
+    margin: 1vw auto;
+    padding: 0 2%;
+    width: max-content;
+    border-radius: 0.3vw;
+    background-color: $colorBrand;
+    color: white;
+    font-size: 2vw;
+  }
+  .allItems:hover{
+    box-shadow: 0 0 10px $fontsColor;
+    cursor: pointer;
+  }
+  .allItems:active{
+    box-shadow: none;
+    background-color: $fontsColor;
+  }
+}
+.advantage{
+  margin-top: $gap;
+  position: relative;
+  display: grid;
+  grid-template-areas:  'pos1 pos2 pos5'
+                        'pos1 pos3 pos6'
+                        'pos1 pos4 pos7';
+  grid-template-columns: 8fr 1.4fr 3fr;
+  grid-template-rows: repeat(3, auto);
+  background-color: #222224;
+  picture{
+    grid-area: pos1;
+    position: relative;
+    img{
+      width: 100%;
+    }
+  }
+  .advantage__content{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    color: white;
+    font-size: 3.7vw;
+    letter-spacing: 0;
+    z-index: 2;
+    span{
+      color: $colorBrand;
+    }
+    div{
+      font-size: 3vw;
+    }
+  }
+  .delivery__img, .sale__img, .quality__img{
+    width: 40%;
+    margin: 2.5vw auto;
+  }
+  .delivery__content, .sale__content, .quality__content{
+    margin: 2.5vw 2.5vw 0 0;
+    color: white;
+    font-size: 1.8vw;
+    span{
+      font-size: 1.2vw;
+    }
+  }
+  .delivery__img{
+    grid-area: pos2;
+  }
+  .delivery__content{
+    grid-area: pos5;
+  }
+  .sale__img{
+    grid-area: pos3;
+  }
+  .sale__content{
+    grid-area: pos6;
+  }
+  .quality__img{
+    grid-area: pos4;
+  }
+  .quality__content{
+    grid-area: pos7;
+  }
+}
+.subscribe{
+  margin-top: $gap;
+  background-image: url(../images/desktop+/layer_41_2195.png);
+  background-size: cover;
+  height: 36.7vw;
+  .container{
+    height: 100%;
+  }
+  @media (max-width: 1700px) {
+    background-image: url(../images/desktop/layer_41_2195.png);
+  }
+  @media (max-width: 1380px) {
+    background-image: url(../images/tablet+/layer_41_2195.png);
+  }
+  @media (max-width: 1060px) {
+    background-image: url(../images/tablet/layer_41_2195.png);
+  }
+  @media (max-width: 760px) {
+    background-image: url(../images/mobile+/layer_41_2195.png);
+  }
+  @media (max-width: 460px) {
+    background-image: url(../images/mobile/layer_41_2195.png);
+  }
+  .feedback{
+    width: 50%;
+    img{
+      width: 15%;
+    }
+    .feedback__content{
+      font-size: 1.5vw;
+      padding: 10%;
+      div{
+        margin-top: 5%;
+        color: $colorBrand;
+      }
+    }
+  }
+  .email{
+    flex-direction: column;
+    width: 50%;
+    .email__content{
+      margin-bottom: 1.5vw;
+      font-size: 2vw;
+      line-height: 1;
+      text-align: center;
+      span{
+        font-size: 1.3vw;
+      }
+    }
+  }
+}
+footer {
+  margin-top: $gap;
+  .about {
+    display: grid;
+    grid-template-columns: auto repeat(3, min-content);
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
+    column-gap: 10vw;
+    row-gap: 1vw;
+    .company, .information, .category {
+      color: $colorBrand;
+      font-size: 2vw;
+    }
+    .shop__content, .company__content, .information__content, .category__content {
+      font-size: 1.5vw;
+      align-self: start;
+    }
+    .company__content, .information__content, .category__content {
+      display: flex;
+      flex-direction: column;
+    }
+    .company__content a:hover, .information__content a:hover, .category__content a:hover {
+      color: $colorBrand;
+      cursor: pointer;
+    }
+    .company__content a:active, .information__content a:active, .category__content a:active {
+      color: $fontsColor;
+    }
+  }
+  .social{
+    margin-top: $gap;
+    padding: 2vw 0;
+    background-color: #e6e6e6;
+    font-size: 1.5vw;
+    .copy{
+
+    }
+  }
+  .social__icons{
+    i {
+      padding: 0.5vw;
+      min-width: 3vw;
+      text-align: center;
+      background-color: white;
+      color: $colorBrand;
+    }
+    i:hover{
+      color: $fontsColor;
+    }
+    i:active{
+      color: $colorBrand;
+    }
+  }
+}

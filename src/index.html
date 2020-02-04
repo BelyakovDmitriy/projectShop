@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://use.fontawesome.com/338ef8093c.js"></script>
+</head>
+<body>
+    <header class="container flex">
+        <a href="./index.html" class="logo">
+            <img src="images/other/logo.png">
+            <div class="logo__content">BRAN<span>D</span></div>
+        </a>
+        <nav class="headerMenu flex">
+            <a href="#">Мужская</a>
+            <a href="#">Женская</a>
+            <a href="#">Детская</a>
+            <a href="#">Аксессуары</a>
+        </nav>
+        <div class="searchAndBasket flex">
+            <div class="inputContainer">
+                <input placeholder="Поиск">
+                <i class="fa fa-search content" aria-hidden="true"></i>
+            </div>
+            <i id="cart" class="fa fa-shopping-cart cart" aria-hidden="true"></i>
+        </div>
+    </header>
+    <main class="main">
+        <div class="banner">
+            <div class="banner__container container">
+                <picture>
+                    <source media="(max-width: 460px)" srcset="images/mobile/layer_24_1125.png">
+                    <source media="(max-width: 760px)" srcset="images/mobile+/layer_24_1125.png">
+                    <source media="(max-width: 1060px)" srcset="images/tablet/layer_24_1125.png">
+                    <source media="(max-width: 1380px)" srcset="images/tablet+/layer_24_1125.png">
+                    <source media="(max-width: 1700px)" srcset="images/desktop/layer_24_1125.png">
+                    <img src="images/desktop+/layer_24_1125.png" alt="banner" class="banner__img">
+                </picture>
+                <div class="banner__content">
+                    БРЕНД<br>люксовой <span>одежды</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="mainMenu container">
+            <a href="#" class="man">
+                <picture>
+                    <source media="(max-width: 460px)" srcset="images/mobile/layer_30_1149.png">
+                    <source media="(max-width: 760px)" srcset="images/mobile+/layer_30_1149.png">
+                    <source media="(max-width: 1060px)" srcset="images/tablet/layer_30_1149.png">
+                    <source media="(max-width: 1380px)" srcset="images/tablet+/layer_30_1149.png">
+                    <source media="(max-width: 1700px)" srcset="images/desktop/layer_30_1149.png">
+                    <img src="images/desktop+/layer_30_1149.png" alt="Мужская одежда">
+                </picture>
+            </a>
+            <a href="#" class="women">
+                <picture>
+                    <source media="(max-width: 460px)" srcset="images/mobile/layer_32_1151.png">
+                    <source media="(max-width: 760px)" srcset="images/mobile+/layer_32_1151.png">
+                    <source media="(max-width: 1060px)" srcset="images/tablet/layer_32_1151.png">
+                    <source media="(max-width: 1380px)" srcset="images/tablet+/layer_32_1151.png">
+                    <source media="(max-width: 1700px)" srcset="images/desktop/layer_32_1151.png">
+                    <img src="images/desktop+/layer_32_1151.png" alt="Женская одежда">
+                </picture>
+            </a>
+            <a href="#" class="children">
+                <picture>
+                    <source media="(max-width: 460px)" srcset="images/mobile/layer_31_1150.png">
+                    <source media="(max-width: 760px)" srcset="images/mobile+/layer_31_1150.png">
+                    <source media="(max-width: 1060px)" srcset="images/tablet/layer_31_1150.png">
+                    <source media="(max-width: 1380px)" srcset="images/tablet+/layer_31_1150.png">
+                    <source media="(max-width: 1700px)" srcset="images/desktop/layer_31_1150.png">
+                    <img src="images/desktop+/layer_31_1150.png" alt="Детская одежда">
+                </picture>
+            </a>
+            <a href="#" class="accessories">
+                <picture>
+                    <source media="(max-width: 460px)" srcset="images/mobile/layer_37_1180.png">
+                    <source media="(max-width: 760px)" srcset="images/mobile+/layer_37_1180.png">
+                    <source media="(max-width: 1060px)" srcset="images/tablet/layer_37_1180.png">
+                    <source media="(max-width: 1380px)" srcset="images/tablet+/layer_37_1180.png">
+                    <source media="(max-width: 1700px)" srcset="images/desktop/layer_37_1180.png">
+                    <img src="images/desktop+/layer_37_1180.png" alt="Аксессуары">
+                </picture>
+            </a>
+        </div>
+        <div class="featured container">
+            <h1 class="featuredTitle">Популярные товары</h1>
+            <div class="featured__items"></div>
+            <div class="allItems">Все товары</div>
+        </div>
+        <div class="advantage container">
+            <picture>
+                <source media="(max-width: 460px)" srcset="images/mobile/layer_38_1315.png">
+                <source media="(max-width: 760px)" srcset="images/mobile+/layer_38_1315.png">
+                <source media="(max-width: 1060px)" srcset="images/tablet/layer_38_1315.png">
+                <source media="(max-width: 1380px)" srcset="images/tablet+/layer_38_1315.png">
+                <source media="(max-width: 1700px)" srcset="images/desktop/layer_38_1315.png">
+                <img src="images/desktop+/layer_38_1315.png" alt="Выгодные условия">
+            </picture>
+            <div class="advantage__content">
+                Скидка<span> 30%</span>
+                <div>для женщин</div>
+            </div>
+            <img class="delivery__img" src="images/other/forma_1_1322.png">
+            <div class="delivery__content">
+                Бесплатная доставка<br>
+                <span>Доставка осуществляется по территории РФ любой транспортной компанией</span>
+            </div>
+            <img class="sale__img" src="images/other/forma_1_1340.png">
+            <div class="sale__content">
+                Акции и скидки<br>
+                <span>Следите за акциями, так Вы будете покупать вещь гораздо дешевле</span>
+            </div>
+            <img class="quality__img" src="images/other/forma_1_1341.png">
+            <div class="quality__content">
+                Гарантия качества<br>
+                <span>Качество продукции подтверждено специалистами</span>
+            </div>
+        </div>
+        <div class="subscribe">
+            <div class="container flex">
+                <div class="feedback flex">
+                    <img src="images/other/layer_40_2207.png">
+                    <div class="feedback__content">
+                        <i>"Полюбила Brabd, строгий стиль и кежуал - можно найти хорошие вещи."</i>
+                        <div>Анна</div>
+                    </div>
+                </div>
+                <div class="email flex">
+                    <div class="email__content">
+                        Подписывайтесь
+                        <br>
+                        <span>и получайте уведомления о наших акциях и скидках</span>
+                    </div>
+                    <div class="inputContainer">
+                        <input placeholder="email@yandex.ru">
+                        <div class="content">Подписаться</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="about container">
+            <a href="./index.html" class="logo">
+                <img src="images/other/logo.png">
+                <div class="logo__content">BRAN<span>D</span></div>
+            </a>
+            <div class="company">Компания</div>
+            <div class="information">Информация</div>
+            <div class="category">Категории</div>
+
+            <div class="shop__content">Магазин модной одежды и аксессуаров для всей семьи</div>
+            <div class="company__content">
+                <a href="#">Домашняя</a>
+                <a href="#">О нас</a>
+                <a href="#">Контакты</a>
+            </div>
+            <div class="information__content">
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">Как купить</a>
+                <a href="#">Как проодать</a>
+            </div>
+            <nav class="category__content">
+                <a href="#">Мужская</a>
+                <a href="#">Женская</a>
+                <a href="#">Детская</a>
+                <a href="#">Аксессуары</a>
+            </nav>
+        </div>
+        <div class="social">
+            <div class="container flex">
+                <div class="copy">&copy Все права защищены</div>
+                <div class="social__icons">
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="js/main.js"></script>
+</body>
+</html>
