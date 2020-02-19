@@ -27,7 +27,7 @@ let build = { // Переменные для перемещения в prodactio
            'src/css/style.css'
        ],
        'js': [
-           'src/libs/jquery/dist/jquery.min.js',
+           'node_modules/jquery/dist/jquery.min.js',
            'src/js/basket.js',
            'src/js/good.js',
            'src/js/index.js'
