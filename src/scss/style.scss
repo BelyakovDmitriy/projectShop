@@ -2,7 +2,7 @@ $fonts: 'Ubuntu', sans-serif;
 $colorBrand: #f16d7f;
 $marginContainer: 5%;
 $widthMax: 1920px;
-$fontsColor: #222;
+$fontsColor: #454545;
 $gap: 5vw;
 
 .container{
@@ -62,7 +62,9 @@ $gap: 5vw;
   cursor: pointer;
 }
 
+
 .goodsItem{
+  position: relative;
   padding: 1vw;
   width: 100%;
   font-size: 1.5vw;
@@ -73,25 +75,153 @@ $gap: 5vw;
     color: $colorBrand;
     font-weight: bold;
   }
+  .addToCart{
+    display: none;
+  }
 }
 .goodsItem:hover{
-  position: relative;
   box-shadow: 0 0 10px $fontsColor;
   img {
     filter: blur(2px);
   }
+  .addToCart{
+    position: absolute;
+    display: block;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 2;
+    padding: 0 1vw;
+    width: max-content;
+    border-radius: 0.3vw;
+    background-color: $colorBrand;
+    color: white;
+    cursor: pointer;
+  }
+  .addToCart:active{
+    background-color: $fontsColor;
+  }
 }
-.addToCard{
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%);
-  z-index: 20;
-  padding: 0 1vw;
-  width: max-content;
-  border-radius: 0.3vw;
+.basket{
+  display: none;
+  width: 100%;
+  position: fixed;
+  top: 7vw;
+  padding: 3vw 5%;
+  background-color: #fff;
+  font-size: 1.4vw;
+  z-index: 10;
+  opacity: 0;
+  .basketItem{
+    padding: 1vw;
+    display: grid;
+    grid-template-columns: 5fr 2fr 2fr 2fr 1fr;
+    border-bottom: 1px solid gray;
+    .basketItemName {
+      text-align: left;
+    }
+    .basketItemPrice, basketItemQuantity, .basketItemTotalPrice {
+      text-align: center;
+    }
+    .basketItemDel {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      cursor: pointer;
+      img{
+        height: 1.5vw;
+      }
+    }
+    .basketItemQuantity {
+      display: flex;
+      justify-content: center;
+      .quantityPlus, .quantityMinus, .quantity {
+        width: 2.2vw;
+        height: 2.2vw;
+        text-align: center;
+        border: none;
+        border-radius: 1.1vw;
+      }
+      .quantityPlus, .quantityMinus {
+        opacity: 0;
+        cursor: pointer;
+        background-color: $colorBrand;
+        color: white;
+      }
+      .quantityPlus:hover, .quantityMinus:hover {
+      }
+      .quantityPlus:active, .quantityMinus:active {
+        background-color: $fontsColor;
+      }
+    }
+  }
+  .basketTotal {
+    padding: 1vw;
+    display: grid;
+    grid-template-columns: 7fr 2fr 2fr 1fr;
+    font-weight: bold;
+    font-size: 1.2em;
+    .basketTotalContent {
+      color: $colorBrand;
+    }
+    .basketTotalQuantity, .basketTotalPrice {
+      text-align: center;
+      color: $colorBrand;
+    }
+  }
+  .buttonOrder {
+    width: max-content;
+    margin-left: auto;
+    padding: 0.5vw 1vw;
+    background-color: $colorBrand;
+    color: white;
+    border-radius: 0.7vw;
+    cursor: pointer;
+  }
+  .buttonOrder:active {
+    background-color: $fontsColor;
+  }
+  .closeBasket {
+    position: absolute;
+    top: 0.5vw;
+    right: 0.5vw;
+    width: max-content;
+    cursor: pointer;
+    font-size: 2vw;
+    line-height: 1;
+  }
+  .closeBasket:hover {
+    color: $colorBrand;
+  }
+  .closeBasket:active {
+    color: $fontsColor;
+  }
+}
+.cover {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $fontsColor;
+  opacity: 0;
+  z-index: 3;
+}
+.buyAnimate{
+  display: none;
+  position: fixed;
+  top: 7vw;
+  right: 0;
+  opacity: 0;
   background-color: $colorBrand;
   color: white;
+  border-bottom-left-radius: 1vw;
+  border-top-left-radius: 1vw;
+  padding: 1%;
+  z-index: 3;
+}
+.visible {
+  display: block;
 }
 
 body{
@@ -103,7 +233,12 @@ body{
 }
 
 header {
+  width: 100%;
   padding: 1% 0;
+  position: fixed;
+  background-color: white;
+  opacity: 0.9;
+  z-index: 3;
   .headerMenu{
     font-size: 1.7vw;
     a {
@@ -129,15 +264,19 @@ header {
   }
   .searchAndBasket{
     width: 25vw;
-    .cart {
+    .quantityBasketItem {
+      padding-left: 2vw;
+      font-weight: bold;
+    }
+    .basketButton {
       font-size: 2vw;
       color: $colorBrand;
       cursor: pointer;
     }
-    .cart:hover {
+    .basketButton:hover {
       color: $fontsColor;
     }
-    .cart:hover:active {
+    .basketButton:hover:active {
       color: $colorBrand;
     }
   }
@@ -145,6 +284,7 @@ header {
 .banner{
   width: 100%;
   height: auto;
+  padding-top: 10vw;
   background-color: #e8e8e8;
   .banner__container{
     position: relative;
@@ -159,7 +299,7 @@ header {
     }
     .banner__content {
       position: absolute;
-      top: 15.3vw;
+      top: 15vw;
       left: 1.7vw;
       font-size: 3vw;
       font-weight: normal;

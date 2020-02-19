@@ -8,6 +8,12 @@ logs
 # Ignore the build directory
 dist/
 
+src/images/desktop/
+src/images/mobile+/
+src/images/mobile/
+src/images/tablet+/
+src/images/tablet/
+
 # Ignore libs
 src/libs/
 

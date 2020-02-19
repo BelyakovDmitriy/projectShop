@@ -2,7 +2,9 @@ const gulp      = require('gulp'), // Подключаем Gulp
     sass        = require('gulp-sass'), //Подключаем Sass пакет,
     browserSync = require('browser-sync'), // Подключаем Browser Sync
     concat      = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
-    uglify      = require('gulp-uglifyjs'), // Подключаем gulp-uglifyjs (для сжатия JS)
+    uglifyes    = require('uglify-es'),
+    composer    = require('gulp-uglify/composer'),
+    uglify      = composer(uglifyes, console), // Подключаем gulp-uglifyjs (для сжатия JS)
     cssnano     = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
     del         = require('del'), // Подключаем библиотеку для удаления файлов и папок
     imagemin    = require('gulp-imagemin'),
@@ -26,6 +28,8 @@ let build = { // Переменные для перемещения в prodactio
        ],
        'js': [
            'src/libs/jquery/dist/jquery.min.js',
+           'src/js/basket.js',
+           'src/js/good.js',
            'src/js/index.js'
        ]
     },
